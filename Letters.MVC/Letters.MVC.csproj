@@ -170,11 +170,11 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\LetterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -235,6 +235,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Letter\Index.cshtml" />
+    <Content Include="Views\Letter\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +253,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Letters.Data\Letters.Data.csproj">
+      <Project>{5b507b4d-dcd9-4393-a612-16f10540469c}</Project>
+      <Name>Letters.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Letters.Models\Letters.Models.csproj">
+      <Project>{067cd87e-1945-41d8-a86d-57cd30e12ce9}</Project>
+      <Name>Letters.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Letters.Services\Letters.Services.csproj">
+      <Project>{115f2322-5f03-49e2-be77-6901c4e7f312}</Project>
+      <Name>Letters.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
