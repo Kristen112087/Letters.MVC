@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Letters.MVC.Models;
+using Letters.MVC.Data;
 
 namespace Letters.MVC
 {
