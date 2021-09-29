@@ -13,7 +13,7 @@ namespace Letters.MVC.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            var model = new LetterListItem[1];
+            var model = new LetterListItem[0];
             return View(model);
         }
 
@@ -21,6 +21,16 @@ namespace Letters.MVC.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(LetterCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+            }
+            return View(model);
         }
     }
 }
