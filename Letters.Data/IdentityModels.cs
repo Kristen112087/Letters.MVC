@@ -32,7 +32,7 @@ namespace Letters.MVC.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Note> Notes { get; set; }
+        public DbSet<Letter> Notes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
