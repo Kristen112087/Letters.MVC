@@ -13,7 +13,13 @@ namespace Letters.MVC.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            var model = new LetterListItem[0];
+            var model = new LetterListItem[1];
+            return View(model);
+        }
+
+        //GET: Note
+        public ActionResult Create()
+        {
             return View();
         }
     }
