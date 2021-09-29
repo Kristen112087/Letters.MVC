@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LetterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Letters.Data\Letters.Data.csproj">
+      <Project>{5b507b4d-dcd9-4393-a612-16f10540469c}</Project>
+      <Name>Letters.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Letters.Models\Letters.Models.csproj">
+      <Project>{067cd87e-1945-41d8-a86d-57cd30e12ce9}</Project>
+      <Name>Letters.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
