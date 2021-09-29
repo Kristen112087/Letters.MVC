@@ -1,4 +1,6 @@
 ﻿using Letters.Models;
+using Letters.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,28 @@ namespace Letters.MVC.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            var model = new LetterListItem[1];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new LetterService(userId);
+            var model = service.GetLetters();
+
             return View(model);
         }
 
         //GET: Note
-        public ActionResult Create()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(LetterCreate model)
         {
-            return View();
+            if(!ModelState.IsValid)
+            {
+            return View(model);
+            }
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new LetterService(userId);
+
+            service.CreateLetter(model);
+            return RedirectToAction("Index");
         }
     }
 }
