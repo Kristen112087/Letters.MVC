@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Letters.MVC.Controllers
 {
+    [Authorize]
     public class LetterController : Controller
     {
         // GET: Note
