@@ -16,6 +16,6 @@ namespace Letters.Models
         public string Title { get; set; }
         [MaxLength(8000)]
         public string Content { get; set; }
-        public int LetterId { get; set; } // this does not show up in browser because its not written in the CSHTML section
+        // public int LetterId { get; set; } // this does not show up in browser because its not written in the CSHTML section
     }
 }
